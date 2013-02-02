@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202011814) do
+ActiveRecord::Schema.define(:version => 20130202194645) do
 
   create_table "boards", :force => true do |t|
     t.datetime "created_at",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          :null => false
@@ -19,11 +19,15 @@ ActiveRecord::Schema.define(:version => 20130202011814) do
     t.integer  "height",                     :default => 10
     t.integer  "width",                      :default => 10
     t.text     "data",       :limit => 1000, :default => "[[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null]]"
+    t.integer  "player"
+    t.integer  "game_id"
   end
 
   create_table "games", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "winner"
+    t.integer  "status"
   end
 
   create_table "ships", :force => true do |t|

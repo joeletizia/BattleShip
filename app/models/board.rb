@@ -3,9 +3,10 @@ require 'json'
 class Board < ActiveRecord::Base
   # attr_accessible :title, :body
   
-  attr_accessible :data, :height, :width
+  attr_accessible :data, :height, :width, :player
   
   has_many :shots
+  belongs_to :game
   
   def hits
     ret = Array.new

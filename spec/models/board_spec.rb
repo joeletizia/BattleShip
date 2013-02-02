@@ -8,5 +8,6 @@ describe Board do
   its("misses.length") {should == 0}
   its("unknown.length") {should == 100}
   
+  it {should respond_to(:player)}
   
 end
