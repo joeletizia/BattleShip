@@ -19,4 +19,35 @@ describe Shot do
     
     its(:hit?) {should be_false}
   end 
+  
+  context 'when a shot is fired correctly' do 
+    before(:all) do 
+      @game = Game.create
+    end
+    
+    it 'should be valid' do
+      @game.boards[0].shots << Shot.new(:x => 5, :y => 3)
+      @game.boards[0].shots.each{|x| x.should be_valid}
+    end    
+  end
+  
+  context 'when a shot is fired incorrectly' do
+    before(:all) do 
+      @game = Game.create
+    end
+    
+    it 'should not be valid' do
+      @game.boards[0].shots << Shot.new(:x => 15)
+      @game.boards[0].shots << Shot.new()
+      @game.boards[0].shots << Shot.new(:x => -3)
+      
+      @game.boards[0].shots << Shot.new(:y => -3)
+      @game.boards[0].shots << Shot.new(:y => 1555)
+      
+      @game.boards[0].shots << Shot.new(:y => 3)
+      @game.boards[0].shots << Shot.new(:x => 3)
+      
+      @game.boards[0].shots.each{|x| x.should_not be_valid}
+    end
+  end
 end
