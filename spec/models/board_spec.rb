@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Board do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:board) {Board.create!}
+  subject {board}
+  
+  its("hits.length") {should == 0}
+  its("misses.length") {should == 0}
+  its("unknown.length") {should == 100}
+  
+  
 end
