@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 gem 'jquery-rails'
+gem 'rest-client'
 
 group :test, :development do
   gem "rspec"
