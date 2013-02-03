@@ -6,7 +6,12 @@ class Board < ActiveRecord::Base
   attr_accessible :data, :height, :width, :player
   
   has_many :shots
+  has_many :ships
   belongs_to :game
+  
+  def pegs
+    JSON.load self.data
+  end
   
   def hits
     ret = Array.new
