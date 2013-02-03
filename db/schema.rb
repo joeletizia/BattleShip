@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130202222659) do
+ActiveRecord::Schema.define(:version => 20130203021441) do
 
   create_table "boards", :force => true do |t|
     t.datetime "created_at",                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          :null => false
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130202222659) do
     t.integer  "y"
     t.integer  "player"
     t.integer  "board_id"
+    t.boolean  "sinker"
   end
 
 end

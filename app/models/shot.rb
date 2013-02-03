@@ -2,7 +2,7 @@ class Shot < ActiveRecord::Base
   # attr_accessible :title, :body
   validate :shot_within_grid
   
-  attr_accessible :hit?, :x, :y, :player
+  attr_accessible :hit?, :x, :y, :player, :sinker
   belongs_to :board
   
   private
