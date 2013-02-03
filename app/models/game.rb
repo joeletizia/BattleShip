@@ -3,7 +3,7 @@ class Game < ActiveRecord::Base
   after_initialize :after_initialize
   validate :only_two_players
   
-  attr_accessible :winner, :status, :platform45_id, :player_name, :player_email
+  attr_accessible :winner, :status
   
   has_many :boards
   
